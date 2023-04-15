@@ -1,0 +1,82 @@
+﻿
+@model Projeto.Presentation.Models.ClienteConsultaFiltrarViewModel
+
+@{
+    ViewBag.Title = "Filtrar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Filtrar dados do Cliente</h4>
+<a href="/Cliente/Consulta" class="btn btn-outline-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+@using (Html.BeginForm("FiltrarClientes", "Cliente", FormMethod.Post))
+{
+    <table border="0">
+        <tr>
+            <td style="width:500px">
+                <label>Codigo do cliente:</label>
+                @Html.TextBoxFor(model => model.IdCliente,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "CODIGO DO CLIENTE"
+                    })
+                <br />
+
+                <label>Nome do cliente:</label>
+                @Html.TextBoxFor(model => model.Nome,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "NOME DO CLIENTE"
+                    })
+                <br />
+
+                <label>Endereço de email:</label>
+                @Html.TextBoxFor(model => model.Email,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "ENDEREÇO DE EMAIL"
+                    })
+                <br />
+
+                <label>Telefone:</label>
+                @Html.TextBoxFor(model => model.Telefone,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "NÚMERO DO TELEFONE"
+                    })
+                <br />
+
+                <label>Selecione o sexo:</label>
+                @Html.EnumDropDownListFor(model => model.Sexo,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "SEXO DO CLIENTE"
+                    })
+                <br />
+
+                <label>Selecione o estado civil:</label>
+                @Html.EnumDropDownListFor(model => model.EstadoCivil,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "ESTADO CIVIL DO CLIENTE"
+                    })
+                <br />
+
+                <input type="submit" value="Selecionar clientes" class="btn btn-outline-success" />
+                <br />
+
+                <strong>@ViewBag.Mensagem</strong>
+            </td>
+        </tr>
+    </table>
+}
+<br />

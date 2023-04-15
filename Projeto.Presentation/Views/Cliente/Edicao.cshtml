@@ -1,0 +1,95 @@
+﻿
+@model Projeto.Presentation.Models.ClienteEdicaoViewModel
+
+@{
+    ViewBag.Title = "Edicao";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Atualizar dados de Cliente</h4>
+<a href="/Cliente/Consulta" class="btn btn-outline-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+@using (Html.BeginForm("AtualizarCliente", "Cliente", FormMethod.Post))
+{
+    <table border="0">
+        <tr>
+            <td style="width:500px">
+                <!-- campo oculto -->
+                @Html.HiddenFor(model => model.IdCliente)
+
+                <div class="text-danger">
+                    @Html.ValidationSummary()
+                </div>
+
+                <label>Nome do cliente:</label>
+                @Html.TextBoxFor(model => model.Nome,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "NOME DO CLIENTE"
+                    })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </span>
+                <br />
+
+                <label>Endereço de email:</label>
+                @Html.TextBoxFor(model => model.Email,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "ENDEREÇO DE EMAIL"
+                    })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.Email)
+                </span>
+                <br />
+
+                <label>Telefone:</label>
+                @Html.TextBoxFor(model => model.Telefone,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "NÚMERO DO TELEFONE"
+                    })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.Telefone)
+                </span>
+                <br />
+
+                <label>Selecione o sexo:</label>
+                @Html.EnumDropDownListFor(model => model.Sexo,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "SEXO DO CLIENTE"
+                    })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.Sexo)
+                </span>
+                <br />
+
+                <label>Selecione o estado civil:</label>
+                @Html.EnumDropDownListFor(model => model.EstadoCivil,
+                    new
+                    {
+                        @class = "form-control col-md-10",
+                        @placeholder = "ESTADO CIVIL DO CLIENTE"
+                    })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.EstadoCivil)
+                </span>
+                <br />
+
+                <input type="submit" value="Atualizar Cliente" class="btn btn-outline-success" />
+                <br />
+
+                <strong>@ViewBag.Mensagem</strong>
+            </td>
+        </tr>
+    </table>
+}
+<br />

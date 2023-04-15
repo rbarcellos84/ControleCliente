@@ -1,0 +1,1 @@
+Tecnologia que implementa o padrão MVC em Asp.NET, consolidada e baseada no padrão Model, View e Controller. Desenvolvido em camadas Presentation Layer (PL), Business Layer (BLL) e Data Layer (DAL). Utilizando os recurso Web ASP.NET Framework, AspNet.MVC, AspNet.Razor e Bootstrap.

@@ -1,0 +1,86 @@
+﻿
+@model Projeto.Presentation.Models.ClienteConsultaViewModel
+@{
+    ViewBag.Title = "Consulta";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Consulta de clientes cadastrados</h4>
+<div class="largura265px">
+    <table>
+        <tr>
+            <!-- linha -->
+            <td>
+                <a href="/Home/Index" class="btn btn-outline-info">
+                    Voltar para a página inicial
+                </a>
+            </td>
+            <td style="width:550px"></td>
+            <td>
+                <a href="/Cliente/Listar" class="btn btn-outline-success">
+                    Listar todos os clientes
+                </a>
+            </td>
+            <td>
+                <a href="/Cliente/Filtrar" class="btn btn-outline-success">
+                    Filtrar cliente desejado
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+<div>
+    <strong>@ViewBag.Mensagem</strong>
+</div>
+<br />
+<table class="table table-hover">
+
+    <thead>
+        <!-- cabeçalho -->
+        <tr>
+            <!-- linha -->
+            <th>
+                <div class="centerTexto">Código</div>
+            </th>
+            <th>
+                <div class="centerTexto">Nome do Cliente</div>
+            </th>
+            <th>
+                <div class="centerTexto">Email</div>
+            </th>
+            <th>
+                <div class="centerTexto">Telefone</div>
+            </th>
+            <th>
+                <div class="centerTexto">Sexo</div>
+            </th>
+            <th>
+                <div class="centerTexto">Estado Civil</div>
+            </th>
+            <th>
+                <div class="centerTexto">Operações</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!-- linha -->
+            <td class="centerTexto"> --- </td>
+            <td class="centerTexto"> --- </td>
+            <td class="centerTexto"> --- </td>
+            <td class="centerTexto"> --- </td>
+            <td class="centerTexto"> --- </td>
+            <td class="centerTexto"> --- </td>
+            <td class="centerTexto"> --- </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">
+                Quantidade de clientes: ---
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<br />

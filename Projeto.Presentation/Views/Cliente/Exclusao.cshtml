@@ -1,0 +1,47 @@
+﻿@model Projeto.Presentation.Models.ClienteExclusaoViewModel
+
+@{
+    ViewBag.Title = "Exclusao";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Excluir Cliente</h4>
+<a href="/Cliente/Consulta" class="btn btn-outline-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+
+@using (Html.BeginForm("ExcluirCliente", "Cliente", FormMethod.Post))
+{
+    <table border="0">
+        <tr>
+            <td style="width:500px">
+                <!-- campo oculto -->
+                @Html.HiddenFor(model => model.IdCliente)
+                <p>
+                    <label>Nome do Cliente: @Model.Nome</label>
+                </p>
+                <p>
+                    <label>Email: @Model.Email</label>
+                </p>
+                <p>
+                    <label>Telefone: @Model.Telefone</label>
+                </p>
+                <p>
+                    <label>Sexo: @Model.Sexo</label>
+                </p>
+                <p>
+                    <label>Estado Civil: @Model.EstadoCivil</label>
+                </p>
+                <br />
+                <input type="submit" value="Confirmar Exclusão" class="btn btn-outline-danger" />
+                <br />
+                <strong>@ViewBag.Mensagem</strong>
+            </td>
+        </tr>
+    </table>
+}
+<br />
+
+

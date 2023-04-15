@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>COTI Informática - RBarcellos84</title>
+
+    <!-- link para a folha de estilos CSS do bootstrap -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Estilos/FolhaDeEstilo.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="container">
+            <h1>Sistema de Controle de Clientes</h1>
+            <div class="p-3 mb-2 bg-primary text-white">
+                <h4> Projeto para gerenciamento de clientes</h4>
+            </div>
+            <hr />
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

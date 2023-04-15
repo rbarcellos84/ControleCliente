@@ -1,0 +1,108 @@
+﻿
+@model List<Projeto.Presentation.Models.ClienteConsultaListarViewModel>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Consulta de clientes cadastrados</h4>
+<div class="largura265px">
+    <table>
+        <tr>
+            <!-- linha -->
+            <td>
+                <a href="/Home/Index" class="btn btn-outline-info">
+                    Voltar para a página inicial
+                </a>
+            </td>
+            <td style="width:550px"></td>
+            <td>
+                <a href="/Cliente/Listar" class="btn btn-outline-success">
+                    Listar todos os clientes
+                </a>
+            </td>
+            <td>
+                <a href="/Cliente/Filtrar" class="btn btn-outline-success">
+                    Filtrar cliente desejado
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+<div>
+    <strong>@ViewBag.Mensagem</strong>
+</div>
+<br />
+<i>Lista de todos os clientes cadastrados</i>
+<table class="table table-hover">
+    <thead>
+        <!-- cabeçalho -->
+        <tr>
+            <!-- linha -->
+            <th>
+                <div class="centerTexto">Código</div>
+            </th>
+            <th>
+                <div class="centerTexto">Nome do Cliente</div>
+            </th>
+            <th>
+                <div class="centerTexto">Email</div>
+            </th>
+            <th>
+                <div class="centerTexto">Telefone</div>
+            </th>
+            <th>
+                <div class="centerTexto">Sexo</div>
+            </th>
+            <th>
+                <div class="centerTexto">Estado Civil</div>
+            </th>
+            <th>
+                <div class="centerTexto">Operações</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- corpo -->
+        @foreach (var c in Model)
+        {
+            <tr>
+                <!-- linha -->
+                <td>
+                    <div class="centerTexto">@c.IdCliente</div>
+                </td>
+                <td> @c.Nome </td>
+                <td> @c.Email </td>
+                <td>
+                    <div class="centerTexto">@c.Telefone</div>
+                </td>
+                <td>
+                    <div class="centerTexto">@c.Sexo</div>
+                </td>
+                <td>
+                    <div class="centerTexto">@c.EstadoCivil</div>
+                </td>
+                <td>
+                    <div class="centerOpcao">
+                        <a href="/Cliente/Edicao?id=@c.IdCliente" class="btn btn-outline-primary">
+                            Atualizar
+                        </a>
+
+                        <a href="/Cliente/Exclusao?id=@c.IdCliente" class="btn btn-outline-danger">
+                            Excluir
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">
+                Quantidade de clientes: @Model.Count
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<br />
